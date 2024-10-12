@@ -1,10 +1,15 @@
 Double_sreenTest:
 
 開機後顯示WELCOME VOICEMED
+
 連線WiFi後
+
 右側OLED1顯示當前時間日期週次，根據週次亮相對應的綠燈
+
 左側OLED2在提醒時段尚未到時顯示VoiceMed，若調整可變電阻，螢幕會顯示調整音量大小
+
 提醒時段到，OLED2顯示提醒服藥，並亮側邊提示紅燈
+
 按下按鈕確認服藥後OLED2顯示OK!紅燈滅
 
 >提醒時段目前尚未連接APP設定資料(需先確認手機可以連上ESP32端藍芽)
@@ -12,12 +17,17 @@ Double_sreenTest:
 BLEtest:
 
 測試ESP32 BLE，及ESP32 I2S(MAX98357)功能，手機連線ESP32_藍芽後，撥放音樂，將音訊傳給ESP32端，透過MAX983575轉頻輸出
+
 >如果只是上方的藍芽配對連線
 
 void setup() {
+
     Serial.begin(115200);
+    
     SerialBT.begin("VoiceMed"); // 設定藍牙設備名稱
+    
     Serial.println("Bluetooth device is ready to pair.");
+    
 }
 
 目前可以從手機看到ESP32裝置藍芽並配對，但無法連線!
@@ -29,6 +39,7 @@ void setup() {
 musictest:
 
 測試ESP32 I2S接MAX98357，
+
 目前有聲音出來，但是聽起來都是一個頻率，頻率值不夠高、音階差距不夠大聽起來都一樣的話聽起來很像雜訊。
 
 >尚未寫能否用可變電阻控制音量大小
